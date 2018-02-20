@@ -7,18 +7,24 @@ In order to run the local development box, both Vagrant and Virtual Box are requ
 1. Virtualbox
   * https://www.virtualbox.org/wiki/Downloads
 2. Vagrant
-  * https://vagrantup.Computer
+  * https://vagrantup.com
 
 ### Cloning the Repository
 In order to get the configuration files required you must either clone this repository or download the zip file from above,
 
 To clone the repository use:
 ```
-git clone https://github.com/dvigne/insert_later
+git clone https://github.com/dvigne/parallel-vm.git && cd parallel-vm
 ```
 
 ### Configuring the box
-We are going to map a shared folder between your host and the guest operating system. In order to create the folder structure required run the init scripts below:
+Once you have cloned the box there will be a `Vagrantfile` for configuring the virtual machine and an init script responsible for creating the directory structure required for shared folders between the host and the guest operating system.
+
+First download the box:
+```
+vagrant box add dvigne/parallel-vm
+```
+Run the init scripts below
 
 For Windows:
 ```
@@ -28,7 +34,7 @@ For Linux/Mac:
 ```
 ./init.sh
 ```
-After running the init scripts you must uncomment a line in the `.VagrantFile`. Open this file in your favorite text editor and find the lines below:
+After running the init scripts you must uncomment a line in the `.Vagrantfile`. Open the `Vagrantfile` in your favorite text editor and find the lines below:
 ```
 # Share an additional folder to the guest VM. The first argument is
 # the path on the host to the actual folder. The second argument is
