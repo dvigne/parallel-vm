@@ -45,23 +45,20 @@ Vagrant.configure("2") do |config|
   # argument is a set of non-required options.
   # config.vm.synced_folder "../data", "/vagrant_data"
 
-  # Uncomment the line below for Windows:
-  # config.vm.synced_folder "%userprofile%/documents/Code", "/home/vagrant/Code"
-
-  # Uncomment the line below for Linux or Mac:
-  # config.vm.synced_folder "~/Documents/Code", "/home/vagrant/Code"
+  config.vm.synced_folder "~/Documents/Code", "/home/vagrant/Code"
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
   # Example for VirtualBox:
   #
-  # config.vm.provider "virtualbox" do |vb|
+   config.vm.provider "virtualbox" do |vb|
+      vb.customize [ "modifyvm", :id, "--uartmode1", "disconnected" ]
   #   # Display the VirtualBox GUI when booting the machine
   #   vb.gui = true
   #
   #   # Customize the amount of memory on the VM:
   #   vb.memory = "1024"
-  # end
+   end
   #
   # View the documentation for the provider you are using for more
   # information on available options.
