@@ -45,7 +45,11 @@ Vagrant.configure("2") do |config|
   # argument is a set of non-required options.
   # config.vm.synced_folder "../data", "/vagrant_data"
 
-  config.vm.synced_folder "~/Documents/Code", "/home/vagrant/Code"
+  # Uncomment the line below for Windows and fill `user_name` with the proper value:
+  # config.vm.synced_folder C:/Users/user_name/Documents/Code", "/home/vagrant/Code"
+
+  # Uncomment the line below for Linux or Mac:
+  # config.vm.synced_folder "~/Documents/Code", "/home/vagrant/Code"
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
