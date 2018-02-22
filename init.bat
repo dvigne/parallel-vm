@@ -1,5 +1,5 @@
 @echo off
 
-mkdir "%userprofile%\Documents/Code"
+mkdir ".\Code"
 
-echo "Shared Folder '%userprofile%\Documents\Code' Created"
+echo "Shared Folder './Code' Created"

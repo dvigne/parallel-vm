@@ -20,7 +20,7 @@ git clone https://github.com/dvigne/parallel-vm.git && cd parallel-vm
 ```
 
 ### Configuring the box
-Once you have cloned the box there will be a `Vagrantfile` for configuring the virtual machine and an init script responsible for creating the directory structure required for an additional **optional** shared folder between the host and the guest operating system. The new shared folder will be available under `~/Documents/Code`.
+Once you have cloned the box there will be a `Vagrantfile` for configuring the virtual machine and an `init` script responsible for creating the directory structure required for shared folders between your host computer and the virtual machine.
 
 First download the box:
 ```
@@ -36,23 +36,8 @@ For Linux/Mac:
 ```
 ./init.sh
 ```
-
-After running the init scripts you can map the new optional shared folder by editing the `Vagrantfile` in your current directory. Find the lines below and uncomment the line corresponding to your operating system:
-```
-# Share an additional folder to the guest VM. The first argument is
-# the path on the host to the actual folder. The second argument is
-# the path on the guest to mount the folder. And the optional third
-# argument is a set of nonrequired options.
-# config.vm.synced_folder "../data", "/vagrant_data"
-
-# Uncomment the line below for Windows and fill `user_name` with the proper value:
-# config.vm.synced_folder C:/Users/user_name/Documents/Code", "/home/vagrant/Code"
-
-# Uncomment the line below for Linux or Mac:
-# config.vm.synced_folder "~/Documents/Code", "/home/vagrant/Code"
-```
 ### Turning on the Lights
-After you have those files configured go ahead and turn the virtual machine on with:
+After you have the Vagrant Box Downloaded and shared folders configured go ahead and turn the virtual machine on with:
 ```
 vagrant up
 ```
@@ -61,6 +46,6 @@ and then connect with:
 vagrant ssh
 ```
 ### Profit
-After performing the above, you should have access to a shared folder located at the root of the Vagrant Box. You can find the path of the Vagrant folder by typing either `cd` for Windows or `pwd` for Mac/Linux. You may drag your hw/code there to sync files between your virtual machine and host operating system. This allows you to edit in your favorite text editor and your changes will be reflected within the virtual machine to compile and test. Your synced files are located within the virtual machine at `/vagrant`. If you mapped the additional, optional folder, you may also put your code in your hosts `~/Documents/Code` folder and it will be available under `~/Code` in the virtual machine.
+After performing the above, you should have access to a shared folder located at the root of the Vagrant Box named `Code`. You can find the path of the Vagrant folder by typing either `cd` for Windows or `pwd` for Mac/Linux. You may drag your hw/code there to sync files between your virtual machine and host operating system. This allows you to edit in your favorite text editor and your changes will be reflected within the virtual machine to compile and test. Your synced files are located within the virtual machine at `/vagrant/vagrant/Code` or `~/Code`.
 
 Happy coding! :heart:
