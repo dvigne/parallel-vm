@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-mkdir ~/Documents/Code
+mkdir ./Code
 
-echo "Shared Folder '$HOME/Documents/Code' Created"
+echo "Shared Folder './Code' Created"
